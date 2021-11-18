@@ -1,0 +1,19 @@
+In this section, We need to build a gradle application then copy the jar file to the remote server.
+  1. Navigate to the java-app
+  2. Run the command ./gradlew build
+  3. Copy the jar file to the remote server 
+     scp /Users/david/Desktop/DevOps-Study/Techworld-With-Nana/DevOps\ Bootcamp/5\ -\ Cloud\ \&\ Infrastructure\ as\ Service\ Basics\ with\ DigitalOcean/java-react-example-master/build/libs/java-react-example-master.jar ubuntu@3.249.74.49:~
+
+     scp <filePath> <USER>@<HOST_NAME>:<Path in Server to copy the file>
+  4. in the server to start the app at port 7071 run this command and make sure that the server has port 7071 open to incoming traffic.
+    java -jar java-react-example-master.jar &
+
+Note: & is to run the app in detached mode in order to use the terminal after running the command
+Note: You can use 
+      kill -9 $(lsof -ti:7071)
+      to kill the apps running on port 7071
+
+ps aux | grep java    to see the running java process 
+netstat -lnpt     to see all the process and ports for each process
+
+
