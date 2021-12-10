@@ -17,3 +17,6 @@ ps aux | grep java    to see the running java process
 netstat -lnpt     to see all the process and ports for each process
 
 
+You should not run the application as user:
+
+
